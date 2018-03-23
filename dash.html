@@ -6,16 +6,34 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<link rel="stylesheet" href="./bootstrap.min.css">
-		<link rel="stylesheet" href="./custom.css">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/custom.css">
 	</head>
 	<body class="container">
 		<div id="main-feed">
 			<div class="row">
-				<div class="col-md-10">
-					<div class="row">
+				<div class="col-md-2">
+					<ul class="list-group" id="useful-links">
+  						<li class="list-group-item text-center">
+  							<a class="faded-link" href="https://webapps.wesleyan.edu/portal">WesPortal</a>
+  						</li>
+						<li class="list-group-item text-center">
+							<a class="faded-link" href="https://iasext.wesleyan.edu/regprod/!wesmaps_page.html">WesMaps</a>
+						</li>
+						<li class="list-group-item text-center">
+							<a class="faded-link" href="http://moodle.wesleyan.edu/">Moodle</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-10 container-fluid">
+					<div class="row section" id="news">
+						<h2 class="header header-big col-md-12">
+							News
+						</h2>
+
 						<div class="dash-item-wrapper col-md-6" id="wesedu">
-							<a class="dash-item-source" href="http://wesleyan.edu/">Wesleyan Homepage</a>
+							<a class="header header-small faded-link" href="http://wesleyan.edu/">Wesleyan Homepage</a>
 							<div class="dash-item">
 								<div class="dash-item-img">
 									<h5 class="dash-item-caption"></h5>
@@ -24,7 +42,7 @@
 						</div>
 
 						<div class="dash-item-wrapper col-md-6" id="argus">
-							<a class="dash-item-source" href="http://wesleyanargus.com/">The Argus</a>
+							<a class="header header-small faded-link" href="http://wesleyanargus.com/">The Argus</a>
 							<div class="dash-item">
 								<div class="dash-item-img">
 									<h5 class="dash-item-caption"></h5>
@@ -32,30 +50,54 @@
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-md-2">
-					<div class="row">
-						<a class="twitter-timeline col-md-12" 
-							href="https://twitter.com/wesleyan_u?ref_src=twsrc%5Etfw" 
-							data-height="400">
-							Tweets by wesleyan_u
-						</a>
-						<a class="twitter-timeline" 
-							href="https://twitter.com/Weswings?ref_src=twsrc%5Etfw"
-							data-height="400">
-							Tweets by Weswings
-						</a>
+					<div class="row section" id="eats">
+						<h2 class="header header-big col-md-12">
+							Eats
+						</h2>
+
+						<div class="dash-item-wrapper col-md-3 col-sm-6">
+							<div class="dash-item" id="eats-marketplace">
+								<div class="dash-item-img">
+									<h5 class="dash-item-caption">Marketplace Menu</h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="dash-item-wrapper col-md-3 col-sm-6">
+							<div class="dash-item" id="eats-summerfields">
+								<div class="dash-item-img">
+									<h5 class="dash-item-caption">Summerfields Menu</h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="dash-item-wrapper col-md-3 col-sm-6">
+							<a class="twitter-timeline" 
+								href="https://twitter.com/RBCWes?ref_src=twsrc%5Etfw" 
+								data-height="300">
+								Tweets by RBCWes
+							</a>
+						</div>
+
+						<div class="dash-item-wrapper col-md-3 col-sm-6">
+							<a class="twitter-timeline col-md-3" 
+								href="https://twitter.com/Weswings?ref_src=twsrc%5Etfw"
+								data-height="300">
+								Tweets by Weswings
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 			
 
-		<script src="./jquery-3.3.1.min.js"></script>
-		<script src="./bootstrap.min.js"></script>
-		<script src="./widgets.js"></script>
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/widgets.js"></script>
 
-		<script src="./fetchnews.js"></script>
+		<script src="./js/fetchnews.js"></script>
+		<script src="./js/initialize-eats.js"></script>
 	</body>
 </html>
