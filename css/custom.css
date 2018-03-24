@@ -107,3 +107,39 @@ a:hover {
 #eats-summerfields > .dash-item-img {
 	background-image: url("./media/summies.jpg");
 }
+
+/*CARLO'S EDIT. DANK FRONT-END TEST*/
+.event-name {
+	width: 100%;
+	margin-bottom: 0;
+	font-family: 'Heebo', sans-serif;
+	font-size: 12;
+	font-weight: 700;
+	color: #2A2A2A;
+}
+
+
+.event-location {
+	width: 100%;
+	margin-bottom: 0;
+	font-family: 'Heebo', sans-serif;
+	font-size: 10;
+	font-weight: 700;
+	color: #2A2A2A;
+}
+
+.event-time {
+	width: 100%;
+	margin-bottom: 0;
+	font-family: 'Heebo', sans-serif;
+	font-size: 8
+	font-weight: 700;
+	color: #2A2A2A;
+}
+
+.event {
+	padding: 10px 10px 10px 10px;
+}
+
+
+/* END OF CARLO'S EDIT. DANK FRONT-END TEST*/
