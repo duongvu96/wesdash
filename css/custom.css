@@ -101,11 +101,11 @@ a:hover {
 }
 
 #eats-marketplace > .dash-item-img {
-	background-image: url("./media/marketplace.jpg");
+	background-image: url("../media/marketplace.jpg");
 }
 
 #eats-summerfields > .dash-item-img {
-	background-image: url("./media/summies.jpg");
+	background-image: url("../media/summies.jpg");
 }
 
 /*CARLO'S EDIT. DANK FRONT-END TEST*/
@@ -140,6 +140,3 @@ a:hover {
 .event {
 	padding: 10px 10px 10px 10px;
 }
-
-
-/* END OF CARLO'S EDIT. DANK FRONT-END TEST*/
