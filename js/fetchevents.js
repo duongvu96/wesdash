@@ -1,13 +1,11 @@
 $(document).ready(function() {
-
 	getEvents();
-	
 })
 
 // change this function for front-end
 function updateCalendarItem(events) {
 	var formatAllEvents = events.map(formatCalendarItem).join('');
-	$("#calendar").innerHTML(formatAllEvents);
+	$("#calendar").html(formatAllEvents);
 }
 
 // change this function for front-end
@@ -63,40 +61,39 @@ function getEvents() {
 
 
 function parseEvents(icsdata) {
-	var re = /BEGIN:VEVENT(?:.|\s)*?END:VEVENT/g
-	var events = icsdata.match(re)
-	var parsedEvents = []
+	var re = /BEGIN:VEVENT(?:.|\s)*?END:VEVENT/g;
+	var events = icsdata.match(re);
+	var parsedEvents = [];
 	for (var i = 0; i < events.length; i ++) {
 		if (isEventToday(events[i])) {
-			parsedEvents.push(parseEventDetails(events[i]))
+			parsedEvents.push(parseEventDetails(events[i]));
 		} else {
-			break
+			break;
 		}
 	}
 	// var parsedEvents = events.map(parseEventDetails)
-	return parsedEvents
-
+	return parsedEvents;
 }
 
 
 function isEventToday(event) {
-	var dateRow = event.match("DTSTART.*")[0]
-	var date = dateRow.match(/[0-9]{8}/g)[0]
+	var dateRow = event.match("DTSTART.*")[0];
+	var date = dateRow.match(/[0-9]{8}/g)[0];
 
-	var today = new Date()
-	var year = today.getFullYear()
+	var today = new Date();
+	var year = today.getFullYear();
 	if (today.getDate() < 10) {
-		var day = '0' + today.getDate()
+		var day = '0' + today.getDate();
 	} else {
-		var day = today.getDate()
+		var day = today.getDate();
 	}
 	if (today.getMonth()+1 < 10) {
-		var month = '0' + (today.getMonth()+1)
+		var month = '0' + (today.getMonth()+1);
 	} else {
-		var month = today.getMonth()+1
+		var month = today.getMonth()+1;
 	}
-	var todayFormatted = "".concat(today.getFullYear(), month, day)
-	return date == todayFormatted
+	var todayFormatted = "".concat(today.getFullYear(), month, day);
+	return date === todayFormatted;
 }
 
 function parseEventDetails(event) {

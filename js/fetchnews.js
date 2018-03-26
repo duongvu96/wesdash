@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	getArgusNews();
 	getWesEduNews();
+	getWesleyingNews();
 })
 
 function getArgusNews() {
@@ -19,7 +20,7 @@ function getArgusNews() {
 				link: link
 			});
 		}
-	})
+	});
 }
 
 function getWesEduNews() {
@@ -31,14 +32,34 @@ function getWesEduNews() {
 			var interchangeImages = topStory.find("img").attr("data-interchange").split(", ");
 			var imgSrc = "http://wesleyan.edu" + interchangeImages[interchangeImages.length - 2].substring(1);
 			var caption = topStory.find(".caption").text();
+			var link = topStory.find("a.news-feat-img").attr("href");
 
 			updateDashItem("#wesedu", {
 				imgSrc: imgSrc,
 				caption: caption,
-				link: ""
+				link: link
 			});
 		}
-	})
+	});
+}
+
+function getWesleyingNews() {
+	$.ajax({
+		url: "http://wesleying.org/category/featured/",
+		success: function(data) {
+			var html = $($.parseHTML(data));
+			var topStory = html.find("article").first();
+			var imgSrc = topStory.find(".entry-content img").first().attr("src");
+			var caption = topStory.find(".entry-title > a").text();
+			var link = topStory.find(".entry-title > a").attr("href");
+
+			updateDashItem("#wesleying", {
+				imgSrc: imgSrc,
+				caption: caption,
+				link: link
+			});
+		}
+	});
 }
 
 function updateDashItem(targetId, info) {

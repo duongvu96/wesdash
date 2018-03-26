@@ -2,6 +2,7 @@
 
 :root {
 	--small-padding: 7px;
+	--medium-padding: 15px;
 	--big-padding: 25px;
 	--transition-duration: 0.5s;
 }
@@ -60,7 +61,7 @@ a:hover {
 }
 
 .dash-item-wrapper {
-	padding-bottom: 10px;
+	padding-bottom:var(--big-padding);
 }
 
 .dash-item {
@@ -94,6 +95,7 @@ a:hover {
 .dash-item-img {
 	width: 100%;
 	height: 300px;
+	background-image: url("../media/spinner.gif");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
