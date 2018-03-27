@@ -6,8 +6,12 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+		<link rel="stylesheet" href="./css/slick.css">
+		<link rel="stylesheet" href="./css/slick-theme.css">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/bootstrap-override.css">
 		<link rel="stylesheet" href="./css/custom.css">
+		<link rel="stylesheet" href="./css/slick-override.css">
 	</head>
 	<body class="container">
 		<div id="main-feed">
@@ -31,39 +35,44 @@
 						</li>
 						<!-- END OF CARLO'S EDIT # 1. DANK FRONT-END TEST -->
 					</ul>
-				<!-- CARLO'S EDIT # 2. DANK FRONT-END TEST -->
-					<div id="calendar">
-					</div>
-				<!-- END OF CARLO'S EDIT # 2. DANK FRONT-END TEST -->
+					
 				</div>
 
 				<div class="col-md-10 container-fluid">
-					<div class="row section" id="news">
+					<div class="row section">
+						<h2 class="header header-big col-md-12">
+							Events Today
+						</h2>
+						<div class="col-md-10 offset-md-1" id="calendar">
+						</div>
+					</div>
+
+					<div class="row section">
 						<h2 class="header header-big col-md-12">
 							News
 						</h2>
 
-						<div class="dash-item-wrapper col-md-6" id="wesedu">
+						<div class="dash-item-wrapper col-md-4" id="wesedu">
 							<a class="header header-small faded-link" href="http://wesleyan.edu/">Wesleyan Homepage</a>
-							<div class="dash-item">
+							<div class="dash-item shadow">
 								<div class="dash-item-img">
 									<h5 class="dash-item-caption"></h5>
 								</div>
 							</div>
 						</div>
 
-						<div class="dash-item-wrapper col-md-6" id="argus">
+						<div class="dash-item-wrapper col-md-4" id="argus">
 							<a class="header header-small faded-link" href="http://wesleyanargus.com/">The Argus</a>
-							<div class="dash-item">
+							<div class="dash-item shadow">
 								<div class="dash-item-img">
 									<h5 class="dash-item-caption"></h5>
 								</div>
 							</div>
 						</div>
 
-						<div class="dash-item-wrapper col-md-6" id="wesleying">
+						<div class="dash-item-wrapper col-md-4" id="wesleying">
 							<a class="header header-small faded-link" href="http://wesleying.org/">Wesleying</a>
-							<div class="dash-item">
+							<div class="dash-item shadow">
 								<div class="dash-item-img">
 									<h5 class="dash-item-caption"></h5>
 								</div>
@@ -71,13 +80,13 @@
 						</div>
 					</div>
 
-					<div class="row section" id="eats">
+					<div class="row section">
 						<h2 class="header header-big col-md-12">
 							Eats
 						</h2>
 
 						<div class="dash-item-wrapper col-md-3 col-sm-6">
-							<div class="dash-item" id="eats-marketplace">
+							<div class="dash-item shadow" id="eats-marketplace">
 								<div class="dash-item-img">
 									<h5 class="dash-item-caption">Marketplace Menu</h5>
 								</div>
@@ -85,7 +94,7 @@
 						</div>
 
 						<div class="dash-item-wrapper col-md-3 col-sm-6">
-							<div class="dash-item" id="eats-summerfields">
+							<div class="dash-item shadow" id="eats-summerfields">
 								<div class="dash-item-img">
 									<h5 class="dash-item-caption">Summerfields Menu</h5>
 								</div>
@@ -116,9 +125,10 @@
 		<script src="./js/jquery-3.3.1.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		<script src="./js/widgets.js"></script>
+		<script src="./js/slick.min.js"></script>
 
 		<script src="./js/fetchnews.js"></script>
-		<!-- <script src="./js/fetchevents.js"></script> -->
+		<script src="./js/fetchevents.js"></script>
 		<script src="./js/initialize-eats.js"></script>
 	</body>
 </html>

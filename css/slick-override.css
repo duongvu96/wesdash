@@ -1,0 +1,15 @@
+.slick-next:before, .slick-prev:before {
+  color: #ADADAD;
+}
+
+.slick-prev {
+	left: -7px;
+}
+
+.slick-next {
+	right: -7px;
+}
+
+.slick-slide {
+	height: 200px;
+}

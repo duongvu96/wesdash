@@ -1,11 +1,59 @@
 $(document).ready(function() {
-	getEvents();
+	var storedEvents = getStoredEvents();
+	if (storedEvents === null || new Date() > storedEvents.expiry) {
+		removeStoredEvents();
+		getEvents();
+	} else {
+		updateCalendar(storedEvents.events);
+	}
 })
 
+function getEvents() {
+	$.ajax({
+		url: "http://eaglet.wesleyan.edu/MasterCalendar/iCalFeed.aspx?data=cr7N8e0fDWNjP%2btgb2leSQknEQLeOROtX%2biFGn9Jorc%3d",
+		success: function(data) {
+			// events is an array of events. each event is of the format: title, location, timestart, timeend, url
+			var events = parseEvents(data);
+			var formattedEvents = events.map(formatCalendarItem).join('');
+			storeEvents(formattedEvents);
+			updateCalendar(formattedEvents);
+		}
+	})
+
+}
+
 // change this function for front-end
-function updateCalendarItem(events) {
-	var formatAllEvents = events.map(formatCalendarItem).join('');
-	$("#calendar").html(formatAllEvents);
+function updateCalendar(formattedEvents) {
+	$("#calendar").html(formattedEvents);
+	$('#calendar').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		responsive: [
+		{
+	    	breakpoint: 992,
+	    	settings: {
+	      		slidesToShow: 1,
+	      		slidesToScroll: 1,
+	        	infinite: true,
+	 		}
+	    }]
+	});
+}
+
+function storeEvents(events) {
+	localStorage.setItem("eventsToday", JSON.stringify({
+		events: events,
+		expiry: getEventsExpiry()
+	}));
+}
+
+function getStoredEvents() {
+	return JSON.parse(localStorage.getItem("eventsToday"));
+}
+
+function removeStoredEvents() {
+	localStorage.setItem("eventsToday", null);
 }
 
 // change this function for front-end
@@ -28,37 +76,22 @@ function formatCalendarItem(event) {
 	}
 
 	var css = [
-	'<div class = "event-name">',
-		'<a href ="',
-		event[4],
-		'">',
-		event[0],
+	'<div class="event shadow">',
+		'<a class="faded-link event-name" href ="', event[4], '">',
+			event[0],
 		'</a>',
-	'</div>',
-	'<div class = "event-location">',
-	event[1],
-	'</div>',
-	'<div class = "event-time">',
-	eventTime,
+		'<div class="event-details">',
+			'<div class = "event-location">',
+				event[1],
+			'</div>',
+			'<div class = "event-time">',
+				eventTime,
+			'</div>',
+		'</div>',
 	'</div>'
 	];
 	return css.join('');
 }
-
-
-
-function getEvents() {
-	$.ajax({
-		url: "http://eaglet.wesleyan.edu/MasterCalendar/iCalFeed.aspx?data=cr7N8e0fDWNjP%2btgb2leSQknEQLeOROtX%2biFGn9Jorc%3d",
-		success: function(data) {
-			// events is an array of events. each event is of the format: title, location, timestart, timeend, url
-			var events = parseEvents(data)
-			updateCalendarItem(events)
-		}
-	})
-
-}
-
 
 function parseEvents(icsdata) {
 	var re = /BEGIN:VEVENT(?:.|\s)*?END:VEVENT/g;
@@ -110,4 +143,10 @@ function parseDetail(event, entryPattern) {
 	var patternAsRegex = new RegExp(entryPattern);
 	var parsedDetail = event.match(patternAsRegex)[0]
 	return parsedDetail
+}
+
+function getEventsExpiry() {
+	var endOfDay = new Date();
+	endOfDay.setHours(23, 59, 59);
+	return endOfDay;
 }

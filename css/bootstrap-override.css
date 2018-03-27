@@ -1,0 +1,4 @@
+.col-* {
+	padding-left:  var(--small-padding);
+	padding-right: var(--small-padding);
+}
