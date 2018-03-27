@@ -114,6 +114,7 @@ a:hover {
 }
 
 .event > * {
+	width: 100%;
 	padding: var(--small-padding) var(--medium-padding);
 }
 

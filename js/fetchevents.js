@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var storedEvents = getStoredEvents();
-	if (storedEvents === null || new Date() > storedEvents.expiry) {
+	if (storedEvents === null || new Date() > new Date(storedEvents.expiry)) {
 		removeStoredEvents();
 		getEvents();
 	} else {
@@ -77,9 +77,11 @@ function formatCalendarItem(event) {
 
 	var css = [
 	'<div class="event shadow">',
-		'<a class="faded-link event-name" href ="', event[4], '">',
-			event[0],
-		'</a>',
+		'<div class="event-name">',
+			'<a class="faded-link" href ="', event[4], '">',
+				event[0],
+			'</a>',
+		'</div>',
 		'<div class="event-details">',
 			'<div class = "event-location">',
 				event[1],
