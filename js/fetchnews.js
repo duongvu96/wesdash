@@ -67,5 +67,5 @@ function updateDashItem(targetId, info) {
 	$(targetId + " .dash-item").click(function() {
 		window.location.href = info.link;
 	});
-	$(targetId + " .dash-item-caption").text(info.caption);
+	$(targetId + " .dash-item-caption > .main-caption").text(info.caption);
 }

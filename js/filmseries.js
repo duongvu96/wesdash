@@ -22,6 +22,9 @@ function renderFilms() {
 	 		}
 	    }]
 	});
+	$('#films .dash-item').click(function() {
+		window.location.href = "http://www.wesleyan.edu/filmseries/";
+	});
 }
 
 function generateFilmsHtml(films) {
@@ -33,7 +36,12 @@ function filmTemplate(film) {
 	<div class="dash-item-wrapper film">
 		<div class="dash-item shadow">
 			<div class="dash-item-img" style="background-image:url(${film.photo || "../media/film-tape.jpg"})">
-				<h5 class="dash-item-caption">${film.name}</h5>
+				<div class="dash-item-caption">
+					<h5 class="main-caption">${film.name}
+						<small>(${film.year_made})</small>
+					</h5>
+					<p class="sub-caption">${film.show_time} ${film.show_day}, ${film.show_date} &mdash; <em>${film.price}</em></p>
+				</div>
 			</div>
 		</div>
 	</div>

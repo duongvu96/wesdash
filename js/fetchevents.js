@@ -87,12 +87,12 @@ function formatCalendarItem(event) {
 			'</a>',
 		'</div>',
 		'<div class="event-details">',
-			'<div class = "event-location">',
+			'<p class = "event-location">',
 				event[1],
-			'</div>',
-			'<div class = "event-time">',
+			'</p>',
+			'<p class = "event-time">',
 				eventTime,
-			'</div>',
+			'</p>',
 		'</div>',
 	'</div>'
 	];
