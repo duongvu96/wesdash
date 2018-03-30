@@ -2,14 +2,19 @@
   color: #ADADAD;
 }
 
-.slick-prev {
+/*.slick-prev {
 	left: -7px;
 }
 
 .slick-next {
 	right: -7px;
 }
+*/
+#calendar .slick-slide {
+	height: 300px;
+}
 
-.slick-slide {
-	height: 200px;
+#films .slick-slide {
+	margin-top: 0px;
+	height: auto;
 }

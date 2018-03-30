@@ -9,6 +9,10 @@
 
 body {
 	font-family: 'Heebo', sans-serif;
+	/*background-image: url("../media/wesleyan-1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;*/
 }
 
 a:hover {
@@ -127,4 +131,8 @@ a:hover {
 
 .shadow {
 	box-shadow: 1px 1px 6px rgba(0,0,0,0.25);
+}
+
+.film {
+	margin
 }

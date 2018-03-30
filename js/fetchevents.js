@@ -27,8 +27,10 @@ function updateCalendar(formattedEvents) {
 	$("#calendar").html(formattedEvents);
 	$('#calendar').slick({
 		infinite: true,
-		slidesToShow: 3,
-		slidesToScroll: 3,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+  		autoplaySpeed: 2000,
 		responsive: [
 		{
 	    	breakpoint: 992,
@@ -36,6 +38,8 @@ function updateCalendar(formattedEvents) {
 	      		slidesToShow: 1,
 	      		slidesToScroll: 1,
 	        	infinite: true,
+	        	autoplay: true,
+  				autoplaySpeed: 2000
 	 		}
 	    }]
 	});
@@ -94,6 +98,24 @@ function formatCalendarItem(event) {
 	];
 	return css.join('');
 }
+
+// function eventTemplate() {
+// 	`<div class="event shadow">
+// 		<div class="event-name">
+// 			<a class="faded-link" href ="${event[4]}">
+// 				${event[0]}
+// 			</a>
+// 		</div>
+// 		<div class="event-details">
+// 			<div class = "event-location">
+// 				${event[1]}
+// 			</div>
+// 			<div class = "event-time">
+// 				${eventTime}
+// 			</div>
+// 		</div>
+// 	</div>`,
+// }
 
 function parseEvents(icsdata) {
 	var re = /BEGIN:VEVENT(?:.|\s)*?END:VEVENT/g;
