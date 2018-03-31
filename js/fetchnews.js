@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 function getArgusNews() {
 	$.ajax({
-		url: "https://wesleyanargus.com/",
+		url: "http://wesleyanargus.com/",
 		crossDomain: true,
 		success: function(data) {
 			var html = $($.parseHTML(data));
@@ -26,7 +26,7 @@ function getArgusNews() {
 
 function getWesEduNews() {
 	$.ajax({
-		url: "https://wesleyan.edu/",
+		url: "http://wesleyan.edu/",
 		crossDomain: true,
 		success: function(data) {
 			var html = $($.parseHTML(data));
@@ -47,7 +47,7 @@ function getWesEduNews() {
 
 function getWesleyingNews() {
 	$.ajax({
-		url: "https://wesleying.org/category/featured/",
+		url: "http://wesleying.org/category/featured/",
 		crossDomain: true,
 		success: function(data) {
 			var html = $($.parseHTML(data));
