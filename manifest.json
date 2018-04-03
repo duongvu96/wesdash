@@ -9,5 +9,5 @@
   	"permissions": [
     	"<all_urls>"
 		],
-		"content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://cdn.api.twitter.com https://syndication.twimg.com https://cdn.syndication.twimg.com; object-src 'self'"
+		"content_security_policy": "script-src 'self' https://www.googletagmanager.com https://ssl.google-analytics.com https://platform.twitter.com https://cdn.api.twitter.com https://syndication.twimg.com https://cdn.syndication.twimg.com; object-src 'self'"
   }
