@@ -6,4 +6,8 @@ $(document).ready(function() {
 	$("#eats-summerfields").click(function() {
 		window.location.href = "http://wesleyan.cafebonappetit.com/cafe/summerfields/";
 	});
+
+	$("#eats-sc").click(function() {
+		window.location.href = "http://wesleying.org/author/star-and-crescent/";
+	});
 })

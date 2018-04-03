@@ -2,6 +2,7 @@ $(document).ready(function() {
 	getArgusNews();
 	getWesEduNews();
 	getWesleyingNews();
+	getGroundhogNews();
 })
 
 function getArgusNews() {
@@ -57,6 +58,26 @@ function getWesleyingNews() {
 			var link = topStory.find(".entry-title > a").attr("href");
 
 			updateDashItem("#wesleying", {
+				imgSrc: imgSrc,
+				caption: caption,
+				link: link
+			});
+		}
+	});
+}
+
+function getGroundhogNews() {
+	$.ajax({
+		url: "https://wesgroundhog.wordpress.com/category/wesleyan/",
+		crossDomain: true,
+		success: function(data) {
+			var html = $($.parseHTML(data));
+			var topStory = html.find("article").first();
+			var imgSrc = topStory.find(".featured-image img").first().attr("src");
+			var caption = topStory.find(".entry-title > a").text();
+			var link = topStory.find(".entry-title > a").attr("href");
+
+			updateDashItem("#groundhog", {
 				imgSrc: imgSrc,
 				caption: caption,
 				link: link

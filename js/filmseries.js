@@ -38,7 +38,7 @@ function filmTemplate(film) {
 			<div class="dash-item-img" style="background-image:url(${film.photo || "../media/film-tape.jpg"})">
 				<div class="dash-item-caption">
 					<h5 class="main-caption">${film.name}
-						<small>(${film.year_made})</small>
+						<small>${film.year_made || ""}</small>
 					</h5>
 					<p class="sub-caption">${film.show_time} ${film.show_day}, ${film.show_date} &mdash; <em>${film.price}</em></p>
 				</div>

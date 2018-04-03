@@ -66,6 +66,10 @@ a:hover {
 	margin-bottom: var(--big-padding);
 }
 
+.dash-item-wrapper {
+	margin-bottom: var(--big-padding);
+}
+
 .dash-item {
 	cursor: pointer;
 	transition-duration: var(--transition-duration);
@@ -113,6 +117,15 @@ a:hover {
 
 #eats-summerfields > .dash-item-img {
 	background-image: url("../media/summies.jpg");
+}
+
+#eats-sc > .dash-item-img {
+	background-image: url("../media/sc.jpg");
+}
+
+
+#calendar {
+	margin-bottom: var(--big-padding);
 }
 
 .event {
