@@ -50,7 +50,8 @@ function filmTemplate(film) {
 
 function getFilmsToShow() {
 	return schedule.filter(function(film) {
-		return new Date(film.show_date_numeric) >= new Date();
+		var today = new Date().setTime(0,0,0,0);
+		return new Date(film.show_date_numeric) >= today;
 	});
 }
 

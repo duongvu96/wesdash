@@ -1,13 +1,16 @@
   {
     "name": "WesDash",
-    "version": "1.0",
+    "version": "0.0.2",
     "description": "Dashboard for Wes-related news",
     "manifest_version": 2,
     "chrome_url_overrides" : {
     	"newtab": "dash.html"
   	},
   	"permissions": [
-    	"<all_urls>"
+    	"http://wesleyan.edu/",
+      "https://wesgroundhog.wordpress.com/",
+      "http://wesleying.org/",
+      "http://wesleyanargus.com/"
 		],
 		"content_security_policy": "script-src 'self' https://www.googletagmanager.com https://ssl.google-analytics.com https://platform.twitter.com https://cdn.api.twitter.com https://syndication.twimg.com https://cdn.syndication.twimg.com; object-src 'self'"
   }
