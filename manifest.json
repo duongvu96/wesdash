@@ -1,6 +1,6 @@
   {
     "name": "WesDash",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Dashboard for Wes-related news",
     "manifest_version": 2,
     "chrome_url_overrides" : {
