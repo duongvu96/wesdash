@@ -50,7 +50,8 @@ function filmTemplate(film) {
 
 function getFilmsToShow() {
 	return schedule.filter(function(film) {
-		var today = new Date().setHours(0,0,0,0);
+		// new Date().getTimezoneOffset()*60*1000 would account for timezone difference in millisecs
+		var today = new Date().setHours(0,0,0,0) - new Date().getTimezoneOffset()*60*1000;
 		return new Date(film.show_date_numeric) >= today;
 	});
 }
