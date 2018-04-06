@@ -13,6 +13,8 @@ function displayCourse(courseData) {
 	var courseTitleElement = $("#randomizer-result > a");
 	courseTitleElement.text(`${courseData.full_code}: ${courseData.title}`);
 	courseTitleElement.attr("href", courseData.url);
+
+	$("#randomizer-result > p").text(`${courseData.instructor} \u2014 ${courseData.time}`);
 }
 
 function fetchRandomCourse(randomType) {
