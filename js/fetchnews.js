@@ -71,14 +71,15 @@ function getWesleyingNews() {
 
 function getGroundhogNews() {
 	$.ajax({
-		url: "https://wesgroundhog.wordpress.com/category/wesleyan/",
+		url: "https://wesgroundhog.wordpress.com/",
 		crossDomain: true,
 		success: function(data) {
 			var html = $($.parseHTML(data));
-			var topStory = html.find("article").first();
+			var topStory = html.find("#featured-post-trio article").first();
 			var imgSrc = topStory.find(".featured-image img").first().attr("src");
-			var caption = topStory.find(".entry-title > a").text();
-			var link = topStory.find(".entry-title > a").attr("href");
+			var entryTitleElement = topStory.find(".entry-title > a");
+			var caption = entryTitleElement.text();
+			var link = entryTitleElement.attr("href");
 
 			updateDashItem("#groundhog", {
 				imgSrc: imgSrc,
