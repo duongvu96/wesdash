@@ -33,7 +33,7 @@ function generateFilmsHtml(films) {
 
 function filmTemplate(film) {
 	return `
-	<div class="dash-item-wrapper film">
+	<div class="dash-item-wrapper film dash-item-carousel">
 		<div class="dash-item shadow">
 			<div class="dash-item-img" style="background-image:url(${film.photo || "../media/film-tape.jpg"})">
 				<div class="dash-item-caption">

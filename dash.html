@@ -9,9 +9,17 @@
 		<link rel="stylesheet" href="./css/slick.css">
 		<link rel="stylesheet" href="./css/slick-theme.css">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
+
 		<link rel="stylesheet" href="./css/bootstrap-override.css">
-		<link rel="stylesheet" href="./css/custom.css">
 		<link rel="stylesheet" href="./css/slick-override.css">
+
+		<!-- Common stuff -->
+		<link rel="stylesheet" href="./css/custom.css">
+		<!-- For things like buttons -->
+		<link rel="stylesheet" href="./css/components.css">
+
+		<!-- Specific features -->
+		<link rel="stylesheet" href="./css/apps.css">
 	</head>
 	<body class="container">
 		<div id="main-feed">
@@ -46,71 +54,165 @@
 								Campus Map
 							</a>
 						</li>
-					</ul>
-					
+					</ul>	
 				</div>
 
 				<div class="col-md-10 container-fluid">
-					<div class="row section" id="news">
+					<div class="row section" id="apps">
 						<h2 class="header header-big col-md-12">
-							News
+							Apps
 						</h2>
+						<!-- Button trigger modal -->
 
-						<div class="dash-item-wrapper col-md-6" id="wesedu">
-							<a class="header header-small faded-link" 
-								href="http://wesleyan.edu/"
-								id="wesedu-link">
-								Wesleyan Homepage
-							</a>
+						<div class="dash-item-wrapper col-md-4 app"
+							id="course-randomizer"
+							data-toggle="modal" 
+							data-target="#course-randomizer-modal">
 							<div class="dash-item shadow">
-								<div class="dash-item-img" id="wesedu-article-img">
+								<div class="dash-item-img">
 									<div class="dash-item-caption">
-										<h5 class="main-caption"></h5>
+										<h5 class="main-caption">Course Randomizer</h5>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="dash-item-wrapper col-md-6" id="argus">
-							<a class="header header-small faded-link" 
-								href="http://wesleyanargus.com/"
-								id="argus-link">
-								The Argus
-							</a>
-							<div class="dash-item shadow">
-								<div class="dash-item-img" id="argus-article-img">
-									<div class="dash-item-caption">
-										<h5 class="main-caption"></h5>
+
+						<!-- Modal -->
+						<div class="modal fade app-modal" 
+							id="course-randomizer-modal" 
+							tabindex="-1" 
+							role="dialog">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-body app-body">
+										<h4 class="header header-big text-center">
+											Course Randomizer		
+										</h4>
+										<p class="text-center">
+											Click one of the buttons below to discover a new random class for next semester
+										</p>
+										<div id="randomizer-result" class="text-center">
+											<a href="" class="faded-link" id="course-title" target="_blank"></a>
+										</div>
+										<div class="container">
+											<div class="row" id="randomizer-options">
+												<div class="option-container col-md-6">
+													<button type="button"
+														id="ha-random"
+														data-random-type="ha"
+														class="btn btn-outline-secondary dash-btn">
+														Arts and Humanities
+													</button>
+
+													<button type="button" 
+														id="sbs-random"
+														data-random-type="sbs"
+														class="btn btn-outline-secondary dash-btn">
+														Social Sciences
+													</button>
+												</div>
+												<div class="option-container col-md-6">
+													<button type="button"
+														id="nsm-random" 
+														data-random-type="nsm"
+														class="btn btn-outline-secondary dash-btn">
+														Natural Sciences and Math
+													</button>
+													<button type="button"
+														id="misc-random"
+														data-random-type="misc" 
+														class="btn btn-outline-secondary dash-btn">
+														Others
+													</button>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+					</div>
 
-						<div class="dash-item-wrapper col-md-6" id="wesleying">
-							<a class="header header-small faded-link" 
-								href="http://wesleying.org/"
-								id="wesleying-link">
-								Wesleying
-							</a>
-							<div class="dash-item shadow">
-								<div class="dash-item-img" id="wesleying-article-img">
-									<div class="dash-item-caption">
-										<h5 class="main-caption"></h5>
+					<div class="row section" id="news">
+						<div class="col-md-12">
+							<h2 class="header header-big">
+								News
+							</h2>
+
+							<div id="news-carousel">
+								<div class="dash-item-wrapper dash-item-carousel" id="wesedu">
+									<a class="header header-small faded-link" 
+										href="http://wesleyan.edu/"
+										id="wesedu-link">
+										Wesleyan Homepage
+									</a>
+									<div class="dash-item shadow">
+										<div class="dash-item-img" id="wesedu-article-img">
+											<div class="dash-item-caption">
+												<h5 class="main-caption"></h5>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="dash-item-wrapper col-md-6" id="groundhog">
-							<a class="header header-small faded-link" 
-								href="https://wesgroundhog.wordpress.com/"
-								id="groundhog-link">
-								Wesleyan Groundhog
-							</a>
-							<div class="dash-item shadow">
-								<div class="dash-item-img" id="groundhog-article-img">
-									<div class="dash-item-caption">
-										<h5 class="main-caption"></h5>
+								<div class="dash-item-wrapper dash-item-carousel" id="argus">
+									<a class="header header-small faded-link" 
+										href="http://wesleyanargus.com/"
+										id="argus-link">
+										The Argus
+									</a>
+									<div class="dash-item shadow">
+										<div class="dash-item-img" id="argus-article-img">
+											<div class="dash-item-caption">
+												<h5 class="main-caption"></h5>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="dash-item-wrapper dash-item-carousel" id="wesleying">
+									<a class="header header-small faded-link" 
+										href="http://wesleying.org/"
+										id="wesleying-link">
+										Wesleying
+									</a>
+									<div class="dash-item shadow">
+										<div class="dash-item-img" id="wesleying-article-img">
+											<div class="dash-item-caption">
+												<h5 class="main-caption"></h5>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="dash-item-wrapper dash-item-carousel" id="groundhog">
+									<a class="header header-small faded-link" 
+										href="https://wesgroundhog.wordpress.com/"
+										id="groundhog-link">
+										Wesleyan Groundhog
+									</a>
+									<div class="dash-item shadow">
+										<div class="dash-item-img" id="groundhog-article-img">
+											<div class="dash-item-caption">
+												<h5 class="main-caption"></h5>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="dash-item-wrapper dash-item-carousel" id="artifex">
+									<a class="header header-small faded-link" 
+										href="http://wesleyanartifex.org/"
+										id="artifex-link">
+										Wesleyan Artifex
+									</a>
+									<div class="dash-item shadow">
+										<div class="dash-item-img" id="artifex-article-img">
+											<div class="dash-item-caption">
+												<h5 class="main-caption"></h5>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -198,6 +300,9 @@
 		<script src="./js/widgets.js"></script>
 		<script src="./js/slick.min.js"></script>
 
+		<script src="./js/utilities.js"></script>
+
+		<script src="./js/randomizer.js"></script>
 		<script src="./js/fetchnews.js"></script>
 		<script src="./js/fetchevents.js"></script>
 		<script src="./js/initialize-eats.js"></script>

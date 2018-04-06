@@ -80,7 +80,7 @@ function formatCalendarItem(event) {
 	}
 
 	var css = [
-	'<div class="event shadow">',
+	'<div class="event shadow dash-item-carousel">',
 		'<div class="event-name">',
 			'<a class="faded-link" href ="', event[4], '">',
 				event[0],

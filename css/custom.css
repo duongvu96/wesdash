@@ -125,7 +125,7 @@ a:hover {
 }
 
 .event {
-	margin: var(--small-padding) var(--medium-padding);
+	/*margin: var(--small-padding) var(--medium-padding);*/
 	position: relative;
 }
 
@@ -145,10 +145,14 @@ a:hover {
 	box-shadow: 1px 1px 6px rgba(0,0,0,0.25);
 }
 
-.film.dash-item-wrapper {
+/*.film.dash-item-wrapper {
 	margin: var(--small-padding) var(--medium-padding);
 }
-
+*/
 .film > .dash-item {
 	margin-top: 0;
+}
+
+.dash-item-carousel {
+	margin: var(--small-padding) var(--medium-padding);
 }

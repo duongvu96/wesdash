@@ -1,8 +1,11 @@
 $(document).ready(function() {
+	createCarousel("#news-carousel", 2, 2, 1, 1);
+
 	getArgusNews();
 	getWesEduNews();
 	getWesleyingNews();
 	getGroundhogNews();
+	getArtifexNews();
 })
 
 function getArgusNews() {
@@ -78,6 +81,27 @@ function getGroundhogNews() {
 			var link = topStory.find(".entry-title > a").attr("href");
 
 			updateDashItem("#groundhog", {
+				imgSrc: imgSrc,
+				caption: caption,
+				link: link
+			});
+		}
+	});
+}
+
+function getArtifexNews() {
+	$.ajax({
+		url: "http://wesleyanartifex.org/",
+		crossDomain: true,
+		success: function(data) {
+			var html = $($.parseHTML(data));
+			var topStory = html.find(".summary-item").first();
+			var imgSrc = topStory.find(".summary-thumbnail > img").attr("data-src");
+			var captionElement = topStory.find(".summary-content > .summary-title > a");
+			var caption = captionElement.text();
+			var link = "http://wesleyanartifex.org" + captionElement.attr("href");
+
+			updateDashItem("#artifex", {
 				imgSrc: imgSrc,
 				caption: caption,
 				link: link
