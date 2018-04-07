@@ -2,20 +2,24 @@ $(document).ready(function() {
 	initializeRandomizer();
 });
 
+var timeOutShowLoading;
+
 function initializeRandomizer() {
 	$("#randomizer-options button").click(function(e) {
-		// $("#randomizer-result").hide();
-		// $("#randomizer-load").show(function() {
-		// 	setTimeout(function() {
 		fetchRandomCourse(e.target.dataset.randomType);
-		// 	}, 500);
-		// });
+
+		// Show squirrel if it takes more than 300ms to fetch data
+		timeOutShowLoading = setTimeout(function() {
+			$("#randomizer-load").show();
+			$("#randomizer-result").hide();
+		}, 300);
 	});
 }
 
 function displayCourse(courseData) {
-	// $("#randomizer-load").hide();
-	// $("#randomizer-result").show();
+	clearTimeout(timeOutShowLoading);
+	$("#randomizer-load").hide();
+	$("#randomizer-result").show();
 
 	var courseTitleElement = $("#randomizer-result > a");
 	courseTitleElement.text(`${courseData.full_code}: ${courseData.title}`);
