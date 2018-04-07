@@ -4,18 +4,18 @@ $(document).ready(function() {
 
 function initializeRandomizer() {
 	$("#randomizer-options button").click(function(e) {
-		$("#randomizer-result").hide();
-		$("#randomizer-load").show(function() {
-			setTimeout(function() {
-				fetchRandomCourse(e.target.dataset.randomType)
-			}, 500);
-		});
+		// $("#randomizer-result").hide();
+		// $("#randomizer-load").show(function() {
+		// 	setTimeout(function() {
+		fetchRandomCourse(e.target.dataset.randomType);
+		// 	}, 500);
+		// });
 	});
 }
 
 function displayCourse(courseData) {
-	$("#randomizer-load").hide();
-	$("#randomizer-result").show();
+	// $("#randomizer-load").hide();
+	// $("#randomizer-result").show();
 
 	var courseTitleElement = $("#randomizer-result > a");
 	courseTitleElement.text(`${courseData.full_code}: ${courseData.title}`);

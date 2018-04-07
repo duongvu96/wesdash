@@ -15,7 +15,9 @@ function trackItemClick(eventName) {
 };
 
 var clickTrackingItems = 
-	['#useful-links a', '#news a.header', '#news .dash-item-img', '#eats .dash-item-img', 'a.twitter-timeline'];
+	['#useful-links a', '#news a.header', '#news .dash-item-img', '#eats .dash-item-img', 
+	'a.twitter-timeline', '#course-randomizer-img', '#course-randomizer-title',
+	'#randomizer-options button', '#wesmaps-course-link'];
 
 $(document).ready(function() {
 	clickTrackingItems.forEach(function(itemSelector) {
