@@ -9,19 +9,18 @@
 		<link rel="stylesheet" href="./css/slick.css">
 		<link rel="stylesheet" href="./css/slick-theme.css">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/font-awesome-animation.min.css">
 
 		<link rel="stylesheet" href="./css/bootstrap-override.css">
 		<link rel="stylesheet" href="./css/slick-override.css">
 
 		<!-- Common stuff -->
 		<link rel="stylesheet" href="./css/custom.css">
-		<!-- For things like buttons -->
-		<link rel="stylesheet" href="./css/components.css">
 
 		<!-- Specific features -->
 		<link rel="stylesheet" href="./css/apps.css">
 	</head>
-	<body class="container">
+	<body class="container-fluid">
 		<div id="main-feed">
 			<div class="row">
 				<div class="col-md-2">
@@ -54,87 +53,17 @@
 								Campus Map
 							</a>
 						</li>
+						<li class="list-group-item text-center">
+							<a class="faded-link" 
+								href="http://athletics.wesleyan.edu/facilities/hours"
+								id="athletic-hours-link">
+								Athletic Facility Hours
+							</a>
+						</li>
 					</ul>	
 				</div>
 
-				<div class="col-md-10 container-fluid">
-					<div class="row section" id="apps">
-						<h2 class="header header-big col-md-12">
-							Apps
-						</h2>
-						<!-- Button trigger modal -->
-
-						<div class="dash-item-wrapper col-md-4 app"
-							id="course-randomizer"
-							data-toggle="modal" 
-							data-target="#course-randomizer-modal">
-							<div class="dash-item shadow">
-								<div class="dash-item-img">
-									<div class="dash-item-caption">
-										<h5 class="main-caption">Course Randomizer</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Modal -->
-						<div class="modal fade app-modal" 
-							id="course-randomizer-modal" 
-							tabindex="-1" 
-							role="dialog">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-								<div class="modal-content">
-									<div class="modal-body app-body">
-										<h4 class="header header-big text-center">
-											Course Randomizer		
-										</h4>
-										<p class="text-center">
-											Click one of the buttons below to discover a new random class for next semester
-										</p>
-										<div id="randomizer-result" class="text-center">
-											<a href="" class="faded-link course-title" id="course-title" target="_blank"></a>
-											<p class="course-details"></p>
-										</div>
-										<div class="container">
-											<div class="row" id="randomizer-options">
-												<div class="option-container col-md-6">
-													<button type="button"
-														id="ha-random"
-														data-random-type="ha"
-														class="btn btn-outline-secondary dash-btn">
-														Arts and Humanities
-													</button>
-
-													<button type="button" 
-														id="sbs-random"
-														data-random-type="sbs"
-														class="btn btn-outline-secondary dash-btn">
-														Social Sciences
-													</button>
-												</div>
-												<div class="option-container col-md-6">
-													<button type="button"
-														id="nsm-random" 
-														data-random-type="nsm"
-														class="btn btn-outline-secondary dash-btn">
-														Natural Sciences and Math
-													</button>
-													<button type="button"
-														id="misc-random"
-														data-random-type="misc" 
-														class="btn btn-outline-secondary dash-btn">
-														Others
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
+				<div class="col-md-8 container-fluid">
 					<div class="row section" id="news">
 						<div class="col-md-12">
 							<h2 class="header header-big">
@@ -288,6 +217,90 @@
 								Upcoming Film Series
 							</h2>
 							<div id="films">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-2 container-fluid">
+					<div class="row section" id="apps">
+						<h2 class="header header-big col-md-12">
+							Apps
+						</h2>
+						<!-- Button trigger modal -->
+
+						<div class="dash-item-wrapper app text-center"
+							id="course-randomizer-img"
+							data-toggle="modal" 
+							data-target="#course-randomizer-modal">
+							<div class="app-icon dash-item shadow">
+								<img class="img-fluid" src="./media/dice.png" alt="">
+							</div>
+							<a class="header header-small faded-link" 
+								href="#"
+								id="course-randomizer-title">
+								Course Randomizer
+							</a>
+						</div>
+
+
+						<!-- Modal -->
+						<div class="modal fade app-modal" 
+							id="course-randomizer-modal" 
+							tabindex="-1" 
+							role="dialog">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-body app-body">
+										<h4 class="header header-big text-center">
+											WesMaps Course Randomizer		
+										</h4>
+										<p class="text-center">
+											Click one of the buttons below to discover a new random class for next semester
+										</p>
+										<div id="randomizer-load" class="text-center">
+											<img class="faa-pulse animated faa-fast" src="./media/squirrel.png" alt="">
+											<p>Squirrel fetching data...</p>
+										</div>
+										<div id="randomizer-result" class="text-center">
+											<a href="" class="faded-link course-title" id="course-title" target="_blank"></a>
+											<p class="course-details"></p>
+										</div>
+										<div class="container">
+											<div class="row" id="randomizer-options">
+												<div class="option-container col-md-5 offset-md-1">
+													<button type="button"
+														id="ha-random"
+														data-random-type="ha"
+														class="btn btn-outline-secondary dash-btn">
+														Arts and Humanities
+													</button>
+
+													<button type="button" 
+														id="sbs-random"
+														data-random-type="sbs"
+														class="btn btn-outline-secondary dash-btn">
+														Social Sciences
+													</button>
+												</div>
+												<div class="option-container col-md-5">
+													<button type="button"
+														id="nsm-random" 
+														data-random-type="nsm"
+														class="btn btn-outline-secondary dash-btn">
+														Natural Sciences and Math
+													</button>
+													<button type="button"
+														id="misc-random"
+														data-random-type="misc" 
+														class="btn btn-outline-secondary dash-btn">
+														Others
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

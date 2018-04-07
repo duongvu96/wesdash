@@ -1,5 +1,25 @@
-.app .dash-item-img {
-	height: 170px;
+.app {
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 200px;
+	height: 150px;
+}
+
+.app-icon {
+	display: flex;
+  	align-items: center;
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-bottom: 15px;
+}
+
+.app-icon > img {
+	max-height: 100px;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 
 #course-randomizer .dash-item-img {
@@ -10,7 +30,16 @@
 	max-width: 700px;
 }
 
-.app-body > p {
+#randomizer-load {
+	display: none;
+}
+
+#randomizer-result {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.app-body p {
 	font-weight: 100;
 }
 
@@ -19,7 +48,7 @@
 	padding-right: 10px;
 }
 
-.option-container > .dash-btn {
+.option-container > button {
 	width: 100%;
 	margin-bottom: 10px;
 }

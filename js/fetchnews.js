@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	createCarousel("#news-carousel", 2, 2, 1, 1);
+	Utils.createCarousel("#news-carousel", 2, 2, 1, 1);
 
 	getArgusNews();
 	getWesEduNews();

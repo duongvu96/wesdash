@@ -4,12 +4,19 @@ $(document).ready(function() {
 
 function initializeRandomizer() {
 	$("#randomizer-options button").click(function(e) {
-		console.log(e.target.dataset.randomType);
-		fetchRandomCourse(e.target.dataset.randomType);
+		$("#randomizer-result").hide();
+		$("#randomizer-load").show(function() {
+			setTimeout(function() {
+				fetchRandomCourse(e.target.dataset.randomType)
+			}, 500);
+		});
 	});
 }
 
 function displayCourse(courseData) {
+	$("#randomizer-load").hide();
+	$("#randomizer-result").show();
+
 	var courseTitleElement = $("#randomizer-result > a");
 	courseTitleElement.text(`${courseData.full_code}: ${courseData.title}`);
 	courseTitleElement.attr("href", courseData.url);
@@ -19,14 +26,13 @@ function displayCourse(courseData) {
 
 function fetchRandomCourse(randomType) {
 	$.ajax({
-		url: "http://localhost:3000/randomizer",
+		url: "https://wesdash.herokuapp.com/randomizer",
 		type: "get",
 		contentType: "application/json",
 		data: { 
 			type: randomType.toUpperCase(),
 		},
 		success: function(courseData) {
-			console.log(courseData);
 			displayCourse(courseData);
 		},
 		error: function(xhr) {

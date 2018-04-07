@@ -46,18 +46,18 @@ function updateCalendar(formattedEvents) {
 }
 
 function storeEvents(events) {
-	localStorage.setItem("eventsToday", JSON.stringify({
+	Utils.saveToLocalStorage("eventsToday", {
 		events: events,
 		expiry: getEventsExpiry()
-	}));
+	});
 }
 
 function getStoredEvents() {
-	return JSON.parse(localStorage.getItem("eventsToday"));
+	return Utils.retrieveFromLocalStorage("eventsToday");
 }
 
 function removeStoredEvents() {
-	localStorage.setItem("eventsToday", null);
+	Utils.removeFromLocalStorage("eventsToday");
 }
 
 // change this function for front-end
@@ -98,24 +98,6 @@ function formatCalendarItem(event) {
 	];
 	return css.join('');
 }
-
-// function eventTemplate() {
-// 	`<div class="event shadow">
-// 		<div class="event-name">
-// 			<a class="faded-link" href ="${event[4]}">
-// 				${event[0]}
-// 			</a>
-// 		</div>
-// 		<div class="event-details">
-// 			<div class = "event-location">
-// 				${event[1]}
-// 			</div>
-// 			<div class = "event-time">
-// 				${eventTime}
-// 			</div>
-// 		</div>
-// 	</div>`,
-// }
 
 function parseEvents(icsdata) {
 	var re = /BEGIN:VEVENT(?:.|\s)*?END:VEVENT/g;

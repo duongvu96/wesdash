@@ -7,8 +7,10 @@
 	--transition-duration: 0.5s;
 }
 
-body {
+body.container-fluid {
 	font-family: 'Heebo', sans-serif;
+	padding-right: 50px;
+	padding-left: 50px;
 }
 
 a:hover {
